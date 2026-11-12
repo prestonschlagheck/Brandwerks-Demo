@@ -1,0 +1,67 @@
+
+/* ---------- Commas native Lead form block (CRM > Forms > "Book a Teardown Call"), restyled to match the page.
+   The block renders inline (no iframe) with Commas utility classes; these rules sit on .cf-host so they win. ---------- */
+.cf-host{display:block}
+.cf-host .cf-slot{display:block;width:100%;max-width:none!important}
+.cf-host form{display:grid!important;grid-template-columns:1fr 1fr;gap:var(--s4)!important;margin:0;font-family:var(--sans)}
+.cf-host form > header{display:none!important} /* the section heading already names the call */
+.cf-host form > div{display:grid!important;gap:var(--s2)!important;min-width:0}
+.cf-host form > button,.cf-host form > p,.cf-host form > [role=alert],.cf-host form > div:has(> textarea){grid-column:1/-1}
+.cf-host label{margin:0;font:500 15px/1.3 var(--sans)!important;color:var(--stone)!important}
+.cf-host label .text-error-primary{color:var(--smoke)!important}
+.cf-host input:where(:not([type=checkbox]):not([type=radio])),.cf-host select,.cf-host textarea{ /* :where keeps this at (0,1,1), so the hover/focus/error rules below win */
+  width:100%;height:auto!important;min-height:52px;padding:0 var(--s4)!important;margin:0;border-radius:4px 4px 12px 4px!important;
+  background-color:rgba(0,0,0,.62)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--bone)!important;border:1px solid var(--hair-2)!important;box-shadow:none!important;
+  font:400 17px var(--sans)!important;appearance:none;-webkit-appearance:none;outline:none;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+.cf-host textarea{padding:var(--s3) var(--s4)!important;min-height:120px}
+.cf-host input::placeholder,.cf-host textarea::placeholder{color:var(--smoke)!important;opacity:1}
+.cf-host select{
+  padding-right:var(--s7)!important;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--stone) 50%),linear-gradient(135deg,var(--stone) 50%,transparent 50%)!important;
+  background-position:calc(100% - 20px) 23px,calc(100% - 15px) 23px!important;background-size:5px 5px!important;background-repeat:no-repeat!important;
+}
+.cf-host select.bw-empty{color:var(--smoke)!important}
+.cf-host select option{background:#111;color:var(--bone)}
+@media (hover:hover){.cf-host input:hover,.cf-host select:hover,.cf-host textarea:hover{border-color:rgba(242,239,232,.5)!important}}
+.cf-host input[aria-invalid="true"],.cf-host select[aria-invalid="true"],.cf-host textarea[aria-invalid="true"]{border-color:var(--bone)!important;box-shadow:0 0 0 3px rgba(242,239,232,.12)!important}
+.cf-host form [role=alert],.cf-host form > div > p,.cf-host .text-error-primary:not(label *){margin:0;font:400 14px/1.35 var(--sans)!important;color:var(--bone)!important}
+.cf-host button[type=submit]{
+  --sweep:var(--accent,#8DB49A);position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;width:100%;height:auto!important;min-height:56px;padding:0 var(--s5)!important;margin:0;border:0;
+  border-radius:var(--sm) var(--sm) calc(var(--fr) - var(--fp)) var(--sm)!important;
+  background:var(--bone)!important;color:#000!important;
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.7),0 10px 24px -14px rgba(242,239,232,.5);
+  font:500 13px/1.1 var(--display)!important;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;transition:transform .16s var(--ease);
+}
+.cf-host button[type=submit]::before{
+  content:"";position:absolute;z-index:-1;left:var(--mx,50%);top:var(--my,50%);width:320%;aspect-ratio:1;pointer-events:none;
+  border-radius:50%;background:radial-gradient(closest-side,var(--sweep) 0%,var(--sweep) 52%,rgba(141,180,154,0) 100%);
+  filter:blur(8px);opacity:0;transform:translate(-50%,-50%) scale(.1);
+  transition:opacity .75s ease,transform .85s cubic-bezier(.22,1,.36,1);
+}
+@media (hover:hover){.cf-host button[type=submit]:hover::before{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.cf-host button[type=submit]:focus-visible{outline:2px solid var(--bone);outline-offset:3px}
+.cf-host button[type=submit]:active{transform:scale(.97)}
+.cf-host button[type=submit]:disabled{opacity:.6;cursor:not-allowed}
+.cf-host [data-testid="email-notice"]{margin:0;font:400 14px/1.4 var(--sans)!important;color:var(--smoke)!important}
+.cf-host a{color:var(--bone);text-decoration:underline;text-underline-offset:2px}
+/* after submit: the block swaps the form for its thank-you message */
+.cf-host .cf-slot > :not(form):not(input) h1,.cf-host .cf-slot > :not(form):not(input) h2{font:600 22px/1.15 var(--display)!important;text-transform:uppercase;letter-spacing:-.01em;color:var(--bone)!important;margin:0}
+.cf-host .cf-slot > :not(form):not(input) p{font:400 17px/1.5 var(--sans)!important;color:var(--text)!important}
+/* thank-you check: bone on a faint glass disc (green is reserved for the hero flows) */
+.cf-host [data-testid="form-outcome"] > span:first-child{background:rgba(242,239,232,.06)!important;color:var(--bone)!important;--tw-ring-color:rgba(242,239,232,.3)!important;box-shadow:inset 0 0 0 1px rgba(242,239,232,.3)!important}
+.cf-host [data-testid="form-outcome"] > span:first-child svg{color:var(--bone)!important}
+@media (max-width:767px){.cf-host form{grid-template-columns:minmax(0,1fr)}}
+
+/* the submit fills sage on hover / keyboard focus, like the site's bone buttons */
+.cf-host button[type=submit]:focus-visible::before{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.cf-host button[type=submit]:disabled::before{display:none}
+@media (prefers-reduced-motion:reduce){.cf-host button[type=submit]::before{transition:none}}
+
+/* Final fixes: the last field spans both columns when it would sit alone in the left column (the header is
+   child 1, so an even child index = an odd field count); a clearly visible 2px sage focus ring */
+.cf-host form > div:nth-child(even):has(+ button){grid-column:1/-1}
+.cf-host input:focus,.cf-host select:focus,.cf-host textarea:focus{border-color:var(--accent,#8DB49A)!important;box-shadow:0 0 0 2px rgba(141,180,154,.7)!important}

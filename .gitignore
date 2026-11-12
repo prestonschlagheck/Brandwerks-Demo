@@ -1,0 +1,6 @@
+.DS_Store
+.env
+.env.*
+# outputs of site/build/build_commas_package.py
+site/build/commas-html.html
+site/build/commas.js
