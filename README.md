@@ -7,7 +7,7 @@ It is a demo. The offer and prices are real choices I made, but every lead in th
 - **Live site:** https://commas.com/fnl/org_RKI26HqqTzIj/brandwerx
 - **Walkthrough video (3:30, 1440p):** [video/walkthrough-1440p.mp4](video/walkthrough-1440p.mp4)
 
-[![Walkthrough: the site beside my camera](video/site.jpg)](video/walkthrough-1440p.mp4)
+[![The BRANDWERX home page](site/screenshots/hero.jpg)](https://commas.com/fnl/org_RKI26HqqTzIj/brandwerx)
 
 What's in the build:
 - **Website:** one page of plain HTML, CSS and JavaScript, pasted into the Commas funnel builder's code view. No template and no framework. It opens with a blueprint intro that draws the logo and then the hero.
@@ -16,7 +16,9 @@ What's in the build:
 - **CRM:** a ten-stage pipeline from New Lead to Paid Client, 25 fictional leads tagged by source, app type, budget and buying signal, 19 automations and 10 sequences.
 - **Emails:** a cold sequence on days 0, 3, 7 and 12 whose first email changes with the lead's signal, plus booking, no-show, proposal, checkout and onboarding emails.
 
-![The pipeline in Commas CRM](video/pipeline.jpg)
+![What we build](site/screenshots/what-we-build.jpg)
+
+![The Monday Report](site/screenshots/monday-report.jpg)
 
 Things worth a look:
 - The pipeline is the workflow. Moving a deal into a stage starts that stage's job: a research task, the cold sequence, a call confirmation, a scope task or the checkout email.
@@ -41,9 +43,9 @@ Tech stack:
 What's in this repo:
 
 ```
-site/      index.html and its images and icons, plus the script that packages it for Commas
+site/      index.html, its images and icons, screenshots, and the script that packages it for Commas
 brand/     the logo, the mark and the logo animation
-video/     the walkthrough and two stills from it
+video/     the walkthrough
 ```
 
 Run it locally:
